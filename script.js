@@ -27,6 +27,15 @@ function convertToRoman(num) {
   return result;
 }
 
-// Test the function with an example input
-console.log(convertToRoman(798)); // Output: "DCCXCVIII"
-
+function convertNumber() {
+  const numberInput = document.getElementById("numberInput").value;
+  const resultDiv = document.getElementById("result");
+  
+  if (!isNaN(numberInput) && Number.isInteger(Number(numberInput))) {
+    const number = parseInt(numberInput, 10);
+    const romanNumeral = convertToRoman(number);
+    resultDiv.textContent = romanNumeral;
+  } else {
+    resultDiv.textContent = "Invalid input. Please enter a valid integer.";
+  }
+}
